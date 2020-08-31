@@ -40,12 +40,12 @@ variable "vpc_cidr" {
 }
 variable "public_subnet_cidrs" {
   description = "List of CIDR blocks for public subnets"
-  default     = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
 variable "private_subnet_cidrs" {
   description = "List of CIDR blocks for private subnets"
-  default     = ["10.0.100.0/24", "10.0.101.0/24", "10.0.102.0/24"]
+  default     = ["10.0.100.0/24", "10.0.101.0/24"]
 }
 
 variable "environment" {
@@ -92,11 +92,11 @@ variable "db_seconds_until_auto_pause" {
 }
 variable "task_memory" {
   description = "The amount (in MiB) of memory used by the task"
-  default     = 2048
+  default     = 1024
 }
 variable "task_cpu" {
   description = "The number of cpu units used by the task"
-  default     = 1024
+  default     = 512
 }
 
 variable "scaling_up_cooldown" {

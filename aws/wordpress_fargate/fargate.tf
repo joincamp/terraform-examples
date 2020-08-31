@@ -132,7 +132,8 @@ resource "aws_ecs_service" "this" {
   platform_version = "1.4.0" // required for mounting efs
   network_configuration {
     security_groups = [aws_security_group.alb.id, aws_security_group.db.id, aws_security_group.efs.id]
-    subnets         = module.vpc.private_subnets
+    subnets         = module.vpc.public_subnets
+    assign_public_ip = true
   }
 
   load_balancer {
